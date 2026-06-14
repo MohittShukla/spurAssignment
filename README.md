@@ -1,5 +1,7 @@
 # Spur AI Live Chat Agent
 
+**Live Demo:** [https://spurchat.vercel.app](https://spurchat.vercel.app)
+
 A full-stack AI-powered customer support chat widget built as a take-home assignment for Spur. A user can chat with an AI agent that answers questions about a fictional e-commerce store ("Dash Supply Co.") using Google Gemini.
 
 ---
