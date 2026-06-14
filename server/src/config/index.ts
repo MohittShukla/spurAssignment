@@ -56,7 +56,7 @@ export const config = {
 
   gemini: {
     apiKey: requireEnv("GEMINI_API_KEY"),
-    model: optionalEnv("GEMINI_MODEL", "gemini-2.0-flash"),
+    model: optionalEnv("GEMINI_MODEL", "gemini-3.5-flash"),
   },
 
   corsOrigin: optionalEnv("CORS_ORIGIN", "http://localhost:5173"),
