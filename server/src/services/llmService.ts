@@ -5,7 +5,7 @@ import { Message } from "../types";
 
 const genAI = new GoogleGenerativeAI(config.gemini.apiKey);
 
-const SYSTEM_PROMPT = `You are a friendly and professional support agent for "Spark & Co.", an online lifestyle and accessories store. 
+const SYSTEM_PROMPT = `You are a friendly and professional support agent for "Dash Supply Co.", an online lifestyle and accessories store. 
 
 Your responsibilities:
 - Answer customer questions clearly and concisely.

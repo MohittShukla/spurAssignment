@@ -1,7 +1,7 @@
 import { FAQEntry } from "../types";
 
 /**
- * Domain knowledge for the fictional e-commerce store "Spark & Co."
+ * Domain knowledge for the fictional e-commerce store "Dash Supply Co."
  *
  * This data is injected into the LLM system prompt so the agent can
  * answer common customer questions without hallucinating.
@@ -43,9 +43,9 @@ export const FAQ_DATA: FAQEntry[] = [
       "Yes, we offer free exchanges within 30 days for size or colour swaps on eligible items. Just contact support and we'll arrange a pickup.",
   },
   {
-    question: "What is Spark & Co.?",
+    question: "What is Dash Supply Co.?",
     answer:
-      "Spark & Co. is an online lifestyle and accessories store offering curated, high-quality products ranging from tech gadgets to everyday essentials. We focus on quality, great design, and delightful customer experiences.",
+      "Dash Supply Co. is an online lifestyle and accessories store offering curated, high-quality products ranging from tech gadgets to everyday essentials. We focus on quality, great design, and delightful customer experiences.",
   },
 ];
 

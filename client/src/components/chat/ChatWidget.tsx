@@ -29,7 +29,7 @@ export function ChatWidget() {
         {/* Header */}
         <div className="chat-header">
           <div className="chat-header-info">
-            <span className="chat-header-name">Spark &amp; Co.</span>
+            <span className="chat-header-name">Dash Supply Co.</span>
             <span className="chat-header-status">
               <span className="online-dot" />
               Online

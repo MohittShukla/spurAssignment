@@ -49,7 +49,7 @@ function App() {
   return (
     <div>
       <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-        <span className="navbar-logo">Spark &amp; Co.</span>
+        <span className="navbar-logo">Dash Supply Co.</span>
         <div className="navbar-actions">
           <a href="#products" className="navbar-link">Products</a>
           <button onClick={() => triggerChat()} className="btn btn-brand">
@@ -79,7 +79,7 @@ function App() {
             <div className="hero-chat-preview">
               <div className="hero-chat-head">
                 <span className="hero-chat-dot"></span>
-                Spark AI
+                Dash AI
               </div>
               <div className="hero-chat-body">
                 <div className="hero-chat-msg hero-chat-msg--user">
@@ -187,7 +187,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <span className="footer-logo">Spark &amp; Co.</span>
+            <span className="footer-logo">Dash Supply Co.</span>
             <span className="footer-tagline">Premium accessories for the modern workspace.</span>
           </div>
           <div className="footer-links">
@@ -196,7 +196,7 @@ function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; 2026 Spark &amp; Co. All rights reserved.
+          &copy; 2026 Dash Supply Co. All rights reserved.
         </div>
       </footer>
 

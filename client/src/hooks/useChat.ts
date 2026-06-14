@@ -23,7 +23,7 @@ export function useChat() {
           {
             id: 'welcome',
             sender: 'ai',
-            text: 'Hi there! Welcome to Spark & Co. How can I help you today?',
+            text: 'Hi there! Welcome to Dash Supply Co. How can I help you today?',
             timestamp: new Date().toISOString(),
           },
         ]);
@@ -41,7 +41,7 @@ export function useChat() {
             {
               id: 'welcome',
               sender: 'ai',
-              text: 'Hi there! Welcome to Spark & Co. How can I help you today?',
+              text: 'Hi there! Welcome to Dash Supply Co. How can I help you today?',
               timestamp: new Date().toISOString(),
             },
           ]);
@@ -55,7 +55,7 @@ export function useChat() {
           {
             id: 'welcome',
             sender: 'ai',
-            text: 'Hi there! Welcome to Spark & Co. How can I help you today?',
+            text: 'Hi there! Welcome to Dash Supply Co. How can I help you today?',
             timestamp: new Date().toISOString(),
           },
         ]);
@@ -118,7 +118,7 @@ export function useChat() {
       {
         id: 'welcome',
         sender: 'ai',
-        text: 'Hi there! Welcome to Spark & Co. How can I help you today?',
+        text: 'Hi there! Welcome to Dash Supply Co. How can I help you today?',
         timestamp: new Date().toISOString(),
       },
     ]);

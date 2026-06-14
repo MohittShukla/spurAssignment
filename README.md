@@ -1,6 +1,6 @@
 # Spur AI Live Chat Agent
 
-A full-stack AI-powered customer support chat widget built as a take-home assignment for Spur. A user can chat with an AI agent that answers questions about a fictional e-commerce store ("Spark & Co.") using Google Gemini.
+A full-stack AI-powered customer support chat widget built as a take-home assignment for Spur. A user can chat with an AI agent that answers questions about a fictional e-commerce store ("Dash Supply Co.") using Google Gemini.
 
 ---
 
