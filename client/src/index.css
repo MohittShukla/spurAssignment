@@ -1326,15 +1326,29 @@ a:focus-visible {
   }
 
   .trust-item {
-    flex: 0 0 calc(33% - 16px);
+    flex: 1 1 100%;
   }
 
-  .navbar-link {
-    display: none;
+  .navbar-actions {
+    gap: 12px;
   }
 
   .navbar {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+
+  .navbar-logo {
+    font-size: 16px;
+  }
+
+  .navbar-link {
+    font-size: 13px;
+  }
+
+  .btn {
+    padding: 0 16px;
+    font-size: 13px;
+    height: 38px;
   }
 
   .section {
