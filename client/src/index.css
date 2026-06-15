@@ -782,6 +782,7 @@ a:focus-visible {
   flex-direction: column;
   align-items: flex-end;
   gap: 16px;
+  pointer-events: none;
 }
 
 .chat-window {
@@ -1101,6 +1102,7 @@ a:focus-visible {
   box-shadow: var(--shadow-fab);
   transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
   position: relative;
+  pointer-events: auto;
 }
 
 .chat-fab:hover {
