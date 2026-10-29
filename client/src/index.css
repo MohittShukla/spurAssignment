@@ -1282,93 +1282,403 @@ a:focus-visible {
 }
 
 
-/* ── 25. Responsive — Mobile (≤ 560px) ────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════
+   25. MOBILE REDESIGN (≤ 560px)
+   Design philosophy: Every pixel is intentional.
+   - Compact hero with trust metrics baked in
+   - Horizontal scroll-snap product carousel
+   - Condensed stepper with no wasted vertical space
+   - Full-screen chat sheet with native feel
+   - Purposeful micro-animations for smoothness
+   ══════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 560px) {
-  .hero h1 {
-    font-size: 40px;
+
+  /* ── Body: Enable momentum scrolling ──────────────────────── */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
   }
 
-  .hero-subtitle {
-    font-size: 16px;
-  }
-
-  .hero-visual {
-    display: none;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .products-grid .product-card:nth-child(3) {
-    max-width: none;
-  }
-
-  .trust-bar {
-    flex-wrap: wrap;
-    gap: 32px;
-    padding: 48px 24px;
-  }
-
-  .trust-divider {
-    display: none;
-  }
-
-  .trust-item {
-    flex: 1 1 100%;
-  }
-
-  .navbar-actions {
-    gap: 12px;
-  }
-
+  /* ── Navbar: Slim, glassy, functional ─────────────────────── */
   .navbar {
+    height: 56px;
     padding: 0 16px;
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
   }
 
   .navbar-logo {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 700;
   }
 
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  /* Hide the text nav link on mobile — the Support button is enough */
   .navbar-link {
-    font-size: 13px;
+    display: none;
   }
 
   .btn {
-    padding: 0 16px;
     font-size: 13px;
-    height: 38px;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 8px;
   }
 
+
+  /* ── Hero: Compact, punchy, no wasted space ──────────────── */
+  .hero {
+    padding: 56px 20px 40px;
+    min-height: auto;
+    gap: 0;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.08;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    max-width: 100%;
+    color: var(--text-on-dark-muted);
+    opacity: 0.85;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+    flex: none;
+  }
+
+  /* Bring back the chat preview on mobile as a slim teaser */
+  .hero-visual {
+    display: block;
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .hero-chat-preview {
+    transform: none;
+    animation: none;
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-chat-head {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .hero-chat-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .hero-chat-body {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .hero-chat-msg {
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+
+  /* ── Trust Bar: Inline horizontal strip ──────────────────── */
+  .trust-bar {
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    background: var(--brand-light);
+  }
+
+  .trust-divider {
+    display: block;
+    width: 1px;
+    height: auto;
+    align-self: stretch;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  .trust-item {
+    flex: 1 1 0;
+    padding: 16px 8px;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .trust-value {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: -0.02em;
+  }
+
+  .trust-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  /* ── Sections: Tighter mobile spacing ────────────────────── */
   .section {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 80px;
+    padding: 0 20px 48px;
   }
 
+  .section-label {
+    font-size: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.12em;
+  }
+
+
+  /* ── How It Works: Compact horizontal row ─────────────────── */
+  .steps-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    overflow: visible;
+  }
+
+  .step {
+    flex: 1;
+    max-width: none;
+    padding: 0 4px;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .step-connector {
+    display: none;
+  }
+
+  .step-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .step-desc {
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--text-secondary);
+  }
+
+
+  /* ── Products: Horizontal scroll-snap carousel ───────────── */
+  .products-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-left: 20px;
+    padding: 0 20px 8px;
+    margin: 0 -20px;
+
+    /* Hide scrollbar but keep scrollable */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .products-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    flex: 0 0 78%;
+    max-width: 78%;
+    min-width: 0;
+    scroll-snap-align: start;
+    padding: 20px 18px 18px;
+    border-radius: var(--radius-lg);
+    animation: none;
+  }
+
+  .products-grid .product-card:nth-child(3) {
+    max-width: 78%;
+    grid-column: auto;
+    justify-self: auto;
+  }
+
+  /* Last card gets trailing padding for scroll */
+  .product-card:last-child {
+    margin-right: 0;
+  }
+
+  .product-card-top {
+    margin-bottom: 14px;
+  }
+
+  .product-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .product-icon-wrap svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .product-tag {
+    font-size: 9px;
+    padding: 3px 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .product-name {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .product-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    /* Clamp to 2 lines to keep cards compact */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-footer {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .product-ask {
+    font-size: 12px;
+  }
+
+
+  /* ── Support: Compact card with scroll-snap pills ────────── */
   .support-section {
-    margin-left: 16px;
-    margin-right: 16px;
-    padding: 48px 24px;
+    margin: 0 16px 48px;
+    padding: 28px 20px;
+    border-radius: var(--radius-lg);
+    text-align: left;
   }
 
   .support-title {
-    font-size: 24px;
+    font-size: 20px;
+    margin-bottom: 6px;
   }
 
+  .support-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .quick-help-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+    justify-content: flex-start;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .quick-help-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quick-help-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 10px 16px;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: var(--radius-full);
+  }
+
+
+  /* ── Footer: Minimal, clean ──────────────────────────────── */
+  .site-footer {
+    padding: 32px 20px 24px;
+  }
+
+  .footer-inner {
+    padding-bottom: 24px;
+    margin-bottom: 16px;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-size: 15px;
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  .footer-links a,
+  .footer-links button {
+    font-size: 12px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+
+
+  /* ── Chat: Full-screen sheet with native feel ────────────── */
   .chat-container {
     bottom: 16px;
     right: 16px;
@@ -1376,27 +1686,133 @@ a:focus-visible {
   }
 
   .chat-window {
-    width: calc(100vw - 32px);
-    height: calc(100vh - 100px);
-    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport for mobile browsers */
+    max-width: 100vw;
+    max-height: 100vh;
+    max-height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+    transform: translateY(100%);
+    opacity: 1;
+    transition:
+      transform 0.35s var(--ease-out),
+      opacity 0.2s ease;
+  }
+
+  .chat-window--open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .chat-header {
+    padding: 16px 16px;
+    padding-top: calc(env(safe-area-inset-top, 8px) + 12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chat-header-name {
+    font-size: 14px;
+  }
+
+  .chat-header-status {
+    font-size: 11px;
+  }
+
+  .chat-messages {
+    padding: 16px 16px 12px;
+    gap: 12px;
+  }
+
+  .message {
+    max-width: 88%;
+  }
+
+  .message-bubble {
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* Always show time on mobile (no hover) */
+  .message .message-time {
+    opacity: 0.7;
+    transform: translateY(0);
+    font-size: 10px;
+    margin-top: 4px;
   }
 
   .chat-input {
-    padding: 8px 16px 16px;
+    padding: 6px 12px;
+    padding-bottom: calc(env(safe-area-inset-bottom, 8px) + 8px);
+    background: var(--surface-raised);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .chat-input-field {
+    min-height: 44px;
+    max-height: 100px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    border-radius: 22px;
+    padding: 10px 44px 10px 16px;
+    box-shadow: none;
+    border: 1px solid var(--border);
+  }
+
+  .chat-input-field:focus {
+    box-shadow: none;
+    border-color: var(--border-hover);
   }
 
   .chat-send-btn {
-    right: 24px;
-    bottom: 22px;
+    right: 18px;
+    bottom: calc(env(safe-area-inset-bottom, 8px) + 13px);
+    width: 32px;
+    height: 32px;
   }
 
   .chat-fab {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
-  .site-footer {
-    padding: 40px 20px 32px;
+  .chat-fab:hover {
+    transform: none; /* No hover effects on touch devices */
+  }
+
+  .chat-fab:active {
+    transform: scale(0.92);
+  }
+
+  .chat-fab svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Typing indicator compact */
+  .typing-indicator {
+    padding: 12px 16px;
+    border-radius: 16px 16px 16px 4px;
+  }
+
+  .typing-indicator span {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Error banner compact */
+  .chat-error {
+    margin: 0 12px;
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 10px;
   }
 }
 
